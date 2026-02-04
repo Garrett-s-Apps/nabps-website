@@ -117,8 +117,7 @@ export default function AboutPage() {
                       alt={`${member.name} - ${member.title}`}
                       width={128}
                       height={128}
-                      className={`h-full w-full object-cover ${member.name === "Doug Sunde" ? "scale-125" : ""}`}
-                      style={member.name === "Doug Sunde" ? { objectPosition: "50% 20%" } : {}}
+                      className="h-full w-full object-cover"
                     />
                   </div>
 
