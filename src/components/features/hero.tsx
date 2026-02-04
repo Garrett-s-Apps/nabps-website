@@ -23,8 +23,8 @@ export function Hero() {
 
       <Container>
         <div className="relative z-20 mx-auto max-w-4xl text-center">
-          {/* NABPS Seal - Clean, Full Size */}
-          <div className="mx-auto mb-8">
+          {/* NABPS Seal - Clean, Full Size, Centered */}
+          <div className="mx-auto mb-8 flex justify-center">
             <Image
               src="/images/nabps_seal_v9.svg"
               alt="NABPS Seal - National Association of Ballot Printing Standards"
@@ -36,7 +36,7 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
             Setting the Standard
             <br />
             for Ballot Printing Integrity
