@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/container";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,24 +13,28 @@ const boardMembers = [
     title: "Vice President of Election Services",
     company: "SeaChange Print Innovations",
     bio: "Doug brings extensive experience in election services and print innovation to the NABPS board.",
+    image: "/images/doug-sunde.jpg",
   },
   {
     name: "Brad Moorhouse",
     title: "Senior Operations Manager",
     company: "K&H Integrated Print Solutions",
     bio: "Brad's operational expertise ensures NABPS standards are practical and implementable.",
+    image: "/images/brad-moorhouse.jpg",
   },
   {
     name: "Bryan Dandurand",
     title: "Chief Operating Officer",
     company: "Runbeck Election Services",
     bio: "Bryan leads operational strategy and quality assurance initiatives for NABPS.",
+    image: "/images/bryan-dandurand.png",
   },
   {
     name: "Paul Mantey",
     title: "President",
     company: "ProVote Solutions",
     bio: "Paul provides leadership and vision for NABPS's mission and strategic direction.",
+    image: "/images/paul-mantey.jpg",
   },
 ];
 
@@ -101,16 +106,20 @@ export default function AboutPage() {
                   key={member.name}
                   className="rounded-lg border border-key/10 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  {/* Headshot Placeholder */}
-                  <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-cyan/10">
-                    <span className="text-3xl font-bold text-cyan">
-                      {member.name.split(" ").map(n => n[0]).join("")}
-                    </span>
+                  {/* Professional Headshot */}
+                  <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border-4 border-navy/10">
+                    <Image
+                      src={member.image}
+                      alt={`${member.name} - ${member.title}`}
+                      width={128}
+                      height={128}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
 
                   <div className="text-center">
-                    <h3 className="text-xl font-semibold text-key">{member.name}</h3>
-                    <p className="mt-1 text-sm font-medium text-cyan">{member.title}</p>
+                    <h3 className="text-xl font-semibold text-navy">{member.name}</h3>
+                    <p className="mt-1 text-sm font-medium text-navy-600">{member.title}</p>
                     <p className="mt-1 text-sm text-key/70">{member.company}</p>
                     <p className="mt-4 text-sm leading-6 text-key/70">{member.bio}</p>
                   </div>

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative bg-gradient-to-b from-cyan/5 to-white py-20 sm:py-28">
+    <section className="relative bg-gradient-to-b from-navy/5 to-white py-20 sm:py-28">
       <Container>
         <div className="mx-auto max-w-4xl text-center">
           {/* NABPS Seal */}
@@ -21,12 +21,12 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl font-bold tracking-tight text-key sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-bold tracking-tight text-navy sm:text-5xl lg:text-6xl">
             Setting the Standard for Ballot Printing Integrity
           </h1>
 
           {/* Mission Summary */}
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-key/80">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-navy/70">
             The National Association of Ballot Printing Standards (NABPS) is the industry coalition
             establishing shared standards, certifications, and best practices for Vote by Mail systems.
             We ensure quality, security, and integrity in every ballot.

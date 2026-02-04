@@ -9,7 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // NABPS CMYK Color Palette
+        // Primary Professional Palette
+        navy: {
+          DEFAULT: '#1E3A5F',
+          50: '#F0F4F8',
+          100: '#D9E2EC',
+          200: '#BCCCDC',
+          300: '#9FB3C8',
+          400: '#829AB1',
+          500: '#627D98',
+          600: '#486581',
+          700: '#334E68',
+          800: '#1E3A5F',
+          900: '#102A43',
+        },
+        // NABPS CMYK Accent Colors (use sparingly)
         cyan: {
           DEFAULT: '#00AEEF',
           50: '#E5F7FE',

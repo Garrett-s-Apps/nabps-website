@@ -19,7 +19,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="border-b border-key/10 bg-white">
+    <header className="border-b border-navy/10 bg-white shadow-sm">
       <Container>
         <nav className="flex items-center justify-between py-4" aria-label="Global">
           <div className="flex lg:flex-1">
@@ -67,7 +67,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-semibold leading-6 text-key hover:text-cyan transition-colors"
+                className="text-sm font-semibold leading-6 text-navy hover:text-navy-600 transition-colors"
               >
                 {item.name}
               </Link>
@@ -77,7 +77,7 @@ export function Header() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link
               href="/login"
-              className="text-sm font-semibold leading-6 text-cyan hover:text-cyan-600 transition-colors"
+              className="text-sm font-semibold leading-6 text-navy-600 hover:text-navy-700 transition-colors"
             >
               Member Login <span aria-hidden="true">&rarr;</span>
             </Link>
