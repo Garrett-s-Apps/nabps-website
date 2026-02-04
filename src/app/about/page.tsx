@@ -28,7 +28,7 @@ const boardMembers = [
     name: "Bryan Dandurand",
     title: "Chief Operating Officer",
     company: "Runbeck Election Services",
-    bio: "Bryan brings more than 35 years of leadership in print manufacturing to his role as COO at Runbeck Election Services. As a natural leader who motivates teams to exceed business goals under pressure, Bryan has consistently driven innovation in the election industry. He oversees operations serving customers across 15 states, ensuring all goals are completed on time and within cost parameters. His eight years of specialized experience in the elections industry provides deep understanding of the demands, time constraints, and ever-changing specifications of election cycles.",
+    bio: "Bryan brings extensive leadership experience in print manufacturing to his role as COO at Runbeck Election Services. As a natural leader who motivates teams to exceed business goals under pressure, Bryan has consistently driven innovation in the election industry. He oversees operations serving customers across 15 states, ensuring all goals are completed on time and within cost parameters. His specialized experience in the elections industry provides deep understanding of the demands, time constraints, and ever-changing specifications of election cycles.",
     image: "/images/bryan-dandurand.png",
     source: "https://runbeck.net/leadership/",
   },
