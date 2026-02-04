@@ -229,10 +229,10 @@ export default function CertificationPage() {
               Start your NABPS certification journey today.
             </p>
             <div className="mt-8 flex justify-center gap-4">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="bg-gradient-to-r from-cyan to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white border-0">
                 <Link href="/contact">Apply for Certification</Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="border-navy-800 text-navy-800 hover:bg-navy-800 hover:text-white">
                 <Link href="/members">View Certified Vendors</Link>
               </Button>
             </div>

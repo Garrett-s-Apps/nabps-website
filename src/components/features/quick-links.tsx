@@ -46,23 +46,24 @@ const links = [
 
 export function QuickLinks() {
   return (
-    <section className="bg-navy-50 py-12 sm:py-14">
+    <section className="bg-navy-800 py-16 sm:py-20">
       <Container>
+        <h2 className="text-center text-3xl font-bold text-white mb-12">Explore NABPS</h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {links.map((link) => (
             <Link
               key={link.title}
               href={link.href}
-              className="group relative overflow-hidden rounded-lg border border-navy/10 bg-white p-6 transition-all hover:border-navy hover:shadow-lg"
+              className="group relative overflow-hidden rounded-lg border border-white/10 bg-white p-6 transition-all hover:border-cyan hover:shadow-lg hover:-translate-y-1"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-navy/10 text-navy group-hover:bg-navy group-hover:text-white transition-colors">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-cyan to-cyan-600 text-white transition-transform group-hover:scale-110">
                 {link.icon}
               </div>
-              <h3 className="text-lg font-semibold text-navy group-hover:text-navy-600 transition-colors">
+              <h3 className="text-lg font-semibold text-navy-800 group-hover:text-cyan transition-colors">
                 {link.title}
               </h3>
-              <p className="mt-2 text-sm text-navy/70">{link.description}</p>
-              <div className="mt-4 inline-flex items-center text-sm font-semibold text-navy-600">
+              <p className="mt-2 text-sm text-key/70">{link.description}</p>
+              <div className="mt-4 inline-flex items-center text-sm font-semibold text-cyan">
                 Learn more
                 <svg
                   className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
