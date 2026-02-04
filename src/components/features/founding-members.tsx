@@ -4,15 +4,15 @@ import Link from "next/link";
 
 const foundingMembers = [
   {
-    name: "Runbeck Election Services",
+    name: "RES",
     description: "Leading provider of ballot printing and election services with over 40 years of experience serving election jurisdictions nationwide.",
-    website: "https://runbeck.com",
+    website: "https://runbeck.net/",
     headquarters: "Arizona"
   },
   {
     name: "SeaChange Print Innovations",
     description: "Innovative ballot printing solutions with a focus on security and sustainability, trusted by Pacific Northwest election officials.",
-    website: "https://seachangeprint.com",
+    website: "https://www.seachangemn.com/",
     headquarters: "Washington"
   },
   {
