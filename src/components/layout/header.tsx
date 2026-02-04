@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navigation = [
+  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Standards", href: "/standards" },
   { name: "Resources", href: "/resources" },
