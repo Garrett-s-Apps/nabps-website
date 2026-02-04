@@ -9,7 +9,7 @@ const foundingMembers = [
 
 export function FoundingMembers() {
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="bg-white py-12 sm:py-14">
       <Container>
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-key sm:text-4xl">
@@ -21,7 +21,7 @@ export function FoundingMembers() {
           </p>
 
           {/* Founding Member Logos */}
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {foundingMembers.map((member) => (
               <div
                 key={member.name}

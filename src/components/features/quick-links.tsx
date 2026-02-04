@@ -46,7 +46,7 @@ const links = [
 
 export function QuickLinks() {
   return (
-    <section className="bg-navy-50 py-16 sm:py-20">
+    <section className="bg-navy-50 py-12 sm:py-14">
       <Container>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {links.map((link) => (
