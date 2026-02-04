@@ -24,7 +24,7 @@ export function Footer() {
           <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-3">
               <Image
-                src="/images/nabps_seal_transparent.svg"
+                src="/images/nabps_seal_v9.svg"
                 alt="NABPS Logo"
                 width={48}
                 height={48}

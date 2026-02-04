@@ -30,7 +30,7 @@ export function Header() {
               <span className="sr-only">NABPS</span>
               <div className="flex items-center gap-3">
                 <Image
-                  src="/images/nabps_seal_transparent.svg"
+                  src="/images/nabps_seal_v9.svg"
                   alt="NABPS Logo"
                   width={56}
                   height={56}
