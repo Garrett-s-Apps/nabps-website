@@ -5,11 +5,11 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative bg-gradient-to-b from-navy/5 to-white py-20 sm:py-28">
+    <section className="relative bg-gradient-to-b from-navy/5 to-white py-12 sm:py-16">
       <Container>
         <div className="mx-auto max-w-4xl text-center">
           {/* NABPS Seal */}
-          <div className="mx-auto mb-8 flex h-32 w-32 items-center justify-center">
+          <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center">
             <Image
               src="/images/NABPS_Transparent.png"
               alt="NABPS Seal"
@@ -33,7 +33,7 @@ export function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg">
               <Link href="/certification">Explore Certification</Link>
             </Button>
