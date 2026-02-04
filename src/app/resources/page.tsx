@@ -1,7 +1,7 @@
 "use client";
 
 import { Container } from "@/components/ui/container";
-import { resources, resourceCategories, fileTypeIcons } from "@/lib/data/resources";
+import { resources, resourceCategories, getFileTypeIcon } from "@/lib/data/resources";
 import { useState } from "react";
 
 export default function ResourcesPage() {
@@ -74,8 +74,8 @@ export default function ResourcesPage() {
                     >
                       <div className="flex items-start gap-4">
                         {/* File Type Icon */}
-                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-cyan/10 text-2xl">
-                          {fileTypeIcons[resource.fileType]}
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-cyan/10 text-cyan">
+                          {getFileTypeIcon(resource.fileType)}
                         </div>
 
                         <div className="flex-1">
