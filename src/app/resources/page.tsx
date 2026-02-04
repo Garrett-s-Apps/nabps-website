@@ -75,7 +75,10 @@ export default function ResourcesPage() {
                       <div className="flex items-start gap-4">
                         {/* File Type Icon */}
                         <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-cyan/10 text-cyan">
-                          {getFileTypeIcon(resource.fileType)}
+                          {(() => {
+                            const Icon = getFileTypeIcon(resource.fileType);
+                            return <Icon className="h-6 w-6" />;
+                          })()}
                         </div>
 
                         <div className="flex-1">

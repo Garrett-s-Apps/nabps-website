@@ -1,3 +1,5 @@
+import { FileText, FileSpreadsheet, FileType } from "lucide-react";
+
 export interface Resource {
   id: string;
   title: string;
@@ -109,8 +111,11 @@ export const resourceCategories = [
   { value: "general", label: "General Information" },
 ] as const;
 
-export const fileTypeIcons = {
-  pdf: "📄",
-  docx: "📝",
-  xlsx: "📊",
-} as const;
+export function getFileTypeIcon(fileType: "pdf" | "docx" | "xlsx") {
+  const icons = {
+    pdf: FileText,
+    docx: FileType,
+    xlsx: FileSpreadsheet,
+  };
+  return icons[fileType];
+}
