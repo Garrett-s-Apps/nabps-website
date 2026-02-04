@@ -15,7 +15,7 @@ export default function ResourcesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-navy-900 to-navy-800 py-16 sm:py-20">
+      <section className="py-16 sm:py-20" style={{ background: 'linear-gradient(to bottom, #1a2332, #0a1929)' }}>
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold text-white sm:text-5xl">Resource Library</h1>
