@@ -6,7 +6,7 @@ import { Shield, Award, Users } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24" style={{ background: 'linear-gradient(to bottom, #0a1929, #1a2332)' }}>
+    <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24" style={{ background: 'linear-gradient(to bottom, #1a2332, #0a1929)' }}>
       {/* CMYK Signature Bar - Enhanced */}
       <div className="absolute top-0 z-10 flex h-2 w-full">
         <div className="flex-1 bg-cyan"></div>
@@ -15,8 +15,8 @@ export function Hero() {
         <div className="flex-1 bg-key"></div>
       </div>
 
-      {/* Teal Accent Overlay */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent"></div>
+      {/* Teal Accent Overlay - Subtle, flipped direction */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-tl from-cyan-500/2 via-transparent to-transparent"></div>
 
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-[0.08] bg-dot-pattern"></div>
