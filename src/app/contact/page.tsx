@@ -11,11 +11,11 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-cyan/5 to-white py-16 sm:py-20">
+      <section className="bg-gradient-to-b from-navy-900 to-navy-800 py-16 sm:py-20">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold text-key sm:text-5xl">Contact NABPS</h1>
-            <p className="mt-6 text-lg text-key/80">
+            <h1 className="text-4xl font-bold text-white sm:text-5xl">Contact NABPS</h1>
+            <p className="mt-6 text-lg text-white/90">
               Have questions or want to learn more about NABPS? We're here to help.
             </p>
           </div>

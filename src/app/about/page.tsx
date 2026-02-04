@@ -46,11 +46,11 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-cyan/5 to-white py-16 sm:py-20">
+      <section className="bg-gradient-to-b from-navy-900 to-navy-800 py-16 sm:py-20">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold text-key sm:text-5xl">About NABPS</h1>
-            <p className="mt-6 text-lg text-key/80">
+            <h1 className="text-4xl font-bold text-white sm:text-5xl">About NABPS</h1>
+            <p className="mt-6 text-lg text-white/90">
               The National Association of Ballot Printing Standards brings together industry leaders
               to establish unified standards for ballot printing integrity.
             </p>

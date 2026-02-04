@@ -16,13 +16,13 @@ export default function NewsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-cyan/5 to-white py-16 sm:py-20">
+      <section className="bg-gradient-to-b from-navy-900 to-navy-800 py-16 sm:py-20">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold text-key sm:text-5xl">
+            <h1 className="text-4xl font-bold text-white sm:text-5xl">
               News & Announcements
             </h1>
-            <p className="mt-6 text-lg text-key/80">
+            <p className="mt-6 text-lg text-white/90">
               Stay updated on NABPS developments, industry news, and certification announcements
             </p>
           </div>
