@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 
 const footerLinks = {
@@ -19,9 +20,13 @@ export function Footer() {
         <div className="py-12">
           <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-cyan flex items-center justify-center">
-                <span className="text-white font-bold text-lg">N</span>
-              </div>
+              <Image
+                src="/images/NABPS_Transparent.png"
+                alt="NABPS Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
               <span className="text-lg font-bold text-key">NABPS</span>
             </div>
 

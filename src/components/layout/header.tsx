@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { useState } from "react";
 
@@ -25,9 +26,13 @@ export function Header() {
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">NABPS</span>
               <div className="flex items-center gap-3">
-                <div className="h-12 w-12 rounded-full bg-cyan flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">N</span>
-                </div>
+                <Image
+                  src="/images/NABPS_Transparent.png"
+                  alt="NABPS Logo"
+                  width={48}
+                  height={48}
+                  className="h-12 w-auto"
+                />
                 <span className="text-xl font-bold text-key hidden sm:block">NABPS</span>
               </div>
             </Link>

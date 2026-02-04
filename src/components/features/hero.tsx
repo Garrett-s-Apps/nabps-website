@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import Image from "next/image";
 import Link from "next/link";
 
 export function Hero() {
@@ -7,9 +8,16 @@ export function Hero() {
     <section className="relative bg-gradient-to-b from-cyan/5 to-white py-20 sm:py-28">
       <Container>
         <div className="mx-auto max-w-4xl text-center">
-          {/* NABPS Seal Placeholder */}
-          <div className="mx-auto mb-8 flex h-32 w-32 items-center justify-center rounded-full bg-cyan shadow-lg">
-            <span className="text-6xl font-bold text-white">N</span>
+          {/* NABPS Seal */}
+          <div className="mx-auto mb-8 flex h-32 w-32 items-center justify-center">
+            <Image
+              src="/images/NABPS_Transparent.png"
+              alt="NABPS Seal"
+              width={128}
+              height={128}
+              className="h-32 w-auto"
+              priority
+            />
           </div>
 
           {/* Headline */}
