@@ -5,19 +5,22 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16">
-      {/* CMYK Signature Bar */}
-      <div className="absolute top-0 z-10 flex h-1 w-full">
+    <section className="relative isolate overflow-hidden bg-gradient-to-b from-navy-900 to-navy-800 py-16 sm:py-20 lg:py-24">
+      {/* CMYK Signature Bar - Enhanced */}
+      <div className="absolute top-0 z-10 flex h-2 w-full">
         <div className="flex-1 bg-cyan"></div>
         <div className="flex-1 bg-magenta"></div>
         <div className="flex-1 bg-yellow"></div>
         <div className="flex-1 bg-key"></div>
       </div>
 
+      {/* Teal Accent Overlay */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent"></div>
+
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-0 opacity-[0.03]">
+      <div className="absolute inset-0 z-0 opacity-[0.08]">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #1E3A5F 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(0, 174, 239, 0.3) 1px, transparent 0)`,
           backgroundSize: '32px 32px'
         }}></div>
       </div>
@@ -37,14 +40,14 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight text-navy sm:text-5xl lg:text-6xl">
+          <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
             Setting the Standard
             <br />
             for Ballot Printing Integrity
           </h1>
 
           {/* Trust Indicators */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-navy/70">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-white/90">
             <div className="flex items-center gap-2">
               <svg className="h-5 w-5 text-cyan" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -66,7 +69,7 @@ export function Hero() {
           </div>
 
           {/* Mission Summary */}
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-key/80">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
             The National Association of Ballot Printing Standards (NABPS) is the industry coalition
             establishing shared standards, certifications, and best practices for Vote by Mail systems.
             We ensure quality, security, and integrity in every ballot.
@@ -74,14 +77,14 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="shadow-elevated hover:shadow-floating">
+            <Button asChild size="lg" className="bg-gradient-to-r from-cyan to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white shadow-elevated hover:shadow-floating border-0">
               <Link href="/certification">Explore Certification</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="border-navy/20 hover:bg-navy/5"
+              className="border-white/30 text-white hover:bg-white/10 hover:border-white/50"
             >
               <Link href="/about">Learn More About NABPS</Link>
             </Button>
