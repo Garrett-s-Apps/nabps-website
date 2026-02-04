@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import Image from "next/image";
 import Link from "next/link";
+import { Shield, Award, Users } from "lucide-react";
 
 export function Hero() {
   return (
@@ -18,12 +19,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent"></div>
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-0 opacity-[0.08]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(0, 174, 239, 0.3) 1px, transparent 0)`,
-          backgroundSize: '32px 32px'
-        }}></div>
-      </div>
+      <div className="absolute inset-0 z-0 opacity-[0.08] bg-dot-pattern"></div>
 
       <Container>
         <div className="relative z-20 mx-auto max-w-4xl text-center">
@@ -49,21 +45,15 @@ export function Hero() {
           {/* Trust Indicators */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-white/90">
             <div className="flex items-center gap-2">
-              <svg className="h-5 w-5 text-cyan" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
+              <Shield className="h-5 w-5 text-cyan" />
               <span>Industry-Led Standards</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="h-5 w-5 text-cyan" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
+              <Award className="h-5 w-5 text-cyan" />
               <span>Independent Certification</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="h-5 w-5 text-cyan" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
+              <Users className="h-5 w-5 text-cyan" />
               <span>Founded by Industry Leaders</span>
             </div>
           </div>

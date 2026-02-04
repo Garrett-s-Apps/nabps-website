@@ -16,3 +16,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: #231F20;
 }
+
+/* Background dot pattern utility */
+.bg-dot-pattern {
+  background-image: radial-gradient(circle at 2px 2px, rgba(0, 174, 239, 0.3) 1px, transparent 0);
+  background-size: 32px 32px;
+}
