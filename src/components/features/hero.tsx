@@ -67,15 +67,13 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="bg-gradient-to-r from-cyan to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white shadow-elevated hover:shadow-floating border-0">
+            <Button asChild size="lg" className="bg-gradient-to-r from-cyan-400 via-cyan to-cyan-700 hover:from-cyan-500 hover:via-cyan-600 hover:to-cyan-800 text-white font-semibold shadow-elevated hover:shadow-floating border-0">
               <Link href="/certification">Explore Certification</Link>
             </Button>
             <Button
               asChild
-              variant="outline"
               size="lg"
-              className="border-white/70 text-white hover:bg-white/20 hover:border-white bg-transparent"
-              style={{ borderWidth: '2px' }}
+              className="border-2 border-white text-white hover:bg-white/20 hover:border-white bg-transparent font-semibold backdrop-blur-sm"
             >
               <Link href="/about">Learn More About NABPS</Link>
             </Button>
