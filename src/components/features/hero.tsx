@@ -6,7 +6,7 @@ import { Shield, Award, Users } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-b from-navy-900 to-navy-800 py-16 sm:py-20 lg:py-24">
+    <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24" style={{ background: 'linear-gradient(to bottom, #0a1929, #1a2332)' }}>
       {/* CMYK Signature Bar - Enhanced */}
       <div className="absolute top-0 z-10 flex h-2 w-full">
         <div className="flex-1 bg-cyan"></div>
@@ -74,7 +74,8 @@ export function Hero() {
               asChild
               variant="outline"
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+              className="border-white/70 text-white hover:bg-white/20 hover:border-white bg-transparent"
+              style={{ borderWidth: '2px' }}
             >
               <Link href="/about">Learn More About NABPS</Link>
             </Button>
