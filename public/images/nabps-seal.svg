@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <!-- Path for top text -->
+    <path id="topTextPath" d="M 85,250 A 165,165 0 0,1 415,250" fill="none"/>
+    <!-- Path for bottom text - slightly larger arc for bigger text -->
+    <path id="bottomTextPath" d="M 72,250 A 178,178 0 0,0 428,250" fill="none"/>
+  </defs>
+  
+  <!-- Transparent background (no fill) -->
+  
+  <!-- Outer circle -->
+  <circle cx="250" cy="250" r="185" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  
+  <!-- Top text: NATIONAL ASSOCIATION -->
+  <text font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="4" fill="#1a1a2e">
+    <textPath href="#topTextPath" startOffset="50%" text-anchor="middle">NATIONAL ASSOCIATION</textPath>
+  </text>
+  
+  <!-- Bottom text: BALLOT PRINTING STANDARDS - enlarged and offset to center PRINTING -->
+  <text font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" letter-spacing="4" fill="#1a1a2e">
+    <textPath href="#bottomTextPath" startOffset="50%" text-anchor="middle">BALLOT PRINTING STANDARDS</textPath>
+  </text>
+  
+  <!-- Bullet separators -->
+  <circle cx="85" cy="250" r="5" fill="#1a1a2e"/>
+  <circle cx="415" cy="250" r="5" fill="#1a1a2e"/>
+  
+  <!-- CYM Color Blocks - Top Row -->
+  <!-- Cyan (left) -->
+  <rect x="170" y="145" width="50" height="55" fill="#00AEEF"/>
+  <!-- Yellow (center) - taller -->
+  <rect x="225" y="115" width="50" height="85" fill="#FFD200"/>
+  <!-- Magenta (right) -->
+  <rect x="280" y="145" width="50" height="55" fill="#EC008C"/>
+  
+  <!-- CYM Color Blocks - Bottom Row -->
+  <!-- Cyan (left) -->
+  <rect x="170" y="290" width="50" height="55" fill="#00AEEF"/>
+  <!-- Yellow (center) - taller -->
+  <rect x="225" y="290" width="50" height="85" fill="#FFD200"/>
+  <!-- Magenta (right) -->
+  <rect x="280" y="290" width="50" height="55" fill="#EC008C"/>
+  
+  <!-- NABPS Text -->
+  <text x="250" y="270" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="72" font-weight="500" letter-spacing="2" fill="#1a1a2e">NABPS</text>
+</svg>

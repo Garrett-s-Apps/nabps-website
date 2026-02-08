@@ -52,7 +52,8 @@ export function FoundingMembers() {
                 href={member.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex flex-col rounded-xl border border-navy/10 bg-white p-6 shadow-soft transition-all hover:shadow-elevated hover:border-cyan/30 hover:-translate-y-1"
+                aria-label={`Visit ${member.name} website (opens in new window)`}
+                className="group relative flex flex-col rounded-xl border border-navy/10 bg-white p-6 shadow-soft transition-all hover:shadow-elevated hover:border-cyan/30 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-800"
               >
                 {/* Header with icon */}
                 <div className="mb-4 flex items-start justify-between">

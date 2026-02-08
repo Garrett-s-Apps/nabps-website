@@ -11,7 +11,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#00AEEF",
     icons: [
       {
-        src: "/images/NABPS_Transparent.png",
+        src: "/images/nabps-logo.png",
         sizes: "any",
         type: "image/png",
       },

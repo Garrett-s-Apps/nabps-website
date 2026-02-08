@@ -37,21 +37,25 @@ export default function NewsPage() {
             <div className="lg:w-64 flex-shrink-0">
               <div className="sticky top-4 rounded-lg border border-key/10 bg-white p-6">
                 <h2 className="font-semibold text-key">Categories</h2>
-                <div className="mt-4 space-y-2">
-                  {newsCategories.map((category) => (
-                    <button
-                      key={category.value}
-                      onClick={() => setSelectedCategory(category.value)}
-                      className={`block w-full rounded-md px-3 py-2 text-left text-sm transition-colors ${
-                        selectedCategory === category.value
-                          ? "bg-cyan text-white"
-                          : "text-key/80 hover:bg-cyan/5"
-                      }`}
-                    >
-                      {category.label}
-                    </button>
-                  ))}
-                </div>
+                <nav aria-label="News categories">
+                  <ul className="mt-4 space-y-2">
+                    {newsCategories.map((category) => (
+                      <li key={category.value}>
+                        <button
+                          onClick={() => setSelectedCategory(category.value)}
+                          aria-current={selectedCategory === category.value ? "true" : undefined}
+                          className={`block w-full rounded-md px-3 py-2 text-left text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-800 ${
+                            selectedCategory === category.value
+                              ? "bg-cyan text-white"
+                              : "text-key/80 hover:bg-cyan/5"
+                          }`}
+                        >
+                          {category.label}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
               </div>
             </div>
 
@@ -85,7 +89,7 @@ export default function NewsPage() {
                               })}
                             </time>
                             <span>•</span>
-                            <span className="inline-flex items-center rounded-full bg-cyan/10 px-3 py-1 text-xs font-medium text-cyan">
+                            <span className="inline-flex items-center rounded-full bg-cyan/10 px-3 py-1 text-xs font-medium text-navy-800">
                               {post.category === "announcement" && "Announcement"}
                               {post.category === "news" && "Industry News"}
                             </span>
@@ -94,7 +98,7 @@ export default function NewsPage() {
                           <h2 className="mt-3 text-2xl font-bold text-key">
                             <Link
                               href={`/news/${post.slug}`}
-                              className="hover:text-cyan transition-colors"
+                              className="hover:underline transition-colors"
                             >
                               {post.title}
                             </Link>
@@ -105,7 +109,7 @@ export default function NewsPage() {
                           <div className="mt-4 flex items-center gap-4">
                             <Link
                               href={`/news/${post.slug}`}
-                              className="text-sm font-semibold text-cyan hover:text-cyan-600"
+                              className="text-sm font-semibold text-navy-800 hover:text-key underline underline-offset-2 decoration-2"
                             >
                               Read more →
                             </Link>

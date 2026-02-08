@@ -3,20 +3,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Button } from "@/components/ui/button";
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  organization: z.string().optional(),
-  phone: z.string().optional(),
-  subject: z.string().min(5, "Subject must be at least 5 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-  formType: z.enum(["general", "membership", "media"]),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { contactSchema, type ContactFormData } from "@/lib/validation/contact";
 
 interface ContactFormProps {
   formType: "general" | "membership" | "media";
@@ -60,7 +48,6 @@ export function ContactForm({ formType, title, description }: ContactFormProps) 
       setSubmitStatus("success");
       reset();
     } catch (error) {
-      console.error("Form submission error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -73,6 +60,18 @@ export function ContactForm({ formType, title, description }: ContactFormProps) 
       {description && <p className="mt-2 text-key/70">{description}</p>}
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-6">
+        {/* Honeypot field - hidden from users but visible to bots */}
+        <div className="absolute -left-[9999px] opacity-0 pointer-events-none" aria-hidden="true">
+          <label htmlFor="website">Website (leave blank)</label>
+          <input
+            type="text"
+            id="website"
+            {...register("website")}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
         {/* Name */}
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-key">
@@ -82,10 +81,17 @@ export function ContactForm({ formType, title, description }: ContactFormProps) 
             type="text"
             id="name"
             {...register("name")}
+            required
+            aria-required="true"
+            aria-invalid={errors.name ? "true" : "false"}
+            aria-describedby={errors.name ? "name-error" : undefined}
             className="mt-1 block w-full rounded-md border border-key/30 px-3 py-2 text-key shadow-sm focus:border-cyan focus:outline-none focus:ring-1 focus:ring-cyan"
           />
           {errors.name && (
-            <p className="mt-1 text-sm text-magenta">{errors.name.message}</p>
+            <p id="name-error" className="mt-1 text-sm text-key" role="alert">
+              <span className="sr-only">Error: </span>
+              {errors.name.message}
+            </p>
           )}
         </div>
 
@@ -98,10 +104,17 @@ export function ContactForm({ formType, title, description }: ContactFormProps) 
             type="email"
             id="email"
             {...register("email")}
+            required
+            aria-required="true"
+            aria-invalid={errors.email ? "true" : "false"}
+            aria-describedby={errors.email ? "email-error" : undefined}
             className="mt-1 block w-full rounded-md border border-key/30 px-3 py-2 text-key shadow-sm focus:border-cyan focus:outline-none focus:ring-1 focus:ring-cyan"
           />
           {errors.email && (
-            <p className="mt-1 text-sm text-magenta">{errors.email.message}</p>
+            <p id="email-error" className="mt-1 text-sm text-key" role="alert">
+              <span className="sr-only">Error: </span>
+              {errors.email.message}
+            </p>
           )}
         </div>
 
@@ -126,9 +139,18 @@ export function ContactForm({ formType, title, description }: ContactFormProps) 
           <input
             type="tel"
             id="phone"
+            placeholder="+12345678901"
             {...register("phone")}
+            aria-invalid={errors.phone ? "true" : "false"}
+            aria-describedby={errors.phone ? "phone-error" : undefined}
             className="mt-1 block w-full rounded-md border border-key/30 px-3 py-2 text-key shadow-sm focus:border-cyan focus:outline-none focus:ring-1 focus:ring-cyan"
           />
+          {errors.phone && (
+            <p id="phone-error" className="mt-1 text-sm text-key" role="alert">
+              <span className="sr-only">Error: </span>
+              {errors.phone.message}
+            </p>
+          )}
         </div>
 
         {/* Subject */}
@@ -140,10 +162,17 @@ export function ContactForm({ formType, title, description }: ContactFormProps) 
             type="text"
             id="subject"
             {...register("subject")}
+            required
+            aria-required="true"
+            aria-invalid={errors.subject ? "true" : "false"}
+            aria-describedby={errors.subject ? "subject-error" : undefined}
             className="mt-1 block w-full rounded-md border border-key/30 px-3 py-2 text-key shadow-sm focus:border-cyan focus:outline-none focus:ring-1 focus:ring-cyan"
           />
           {errors.subject && (
-            <p className="mt-1 text-sm text-magenta">{errors.subject.message}</p>
+            <p id="subject-error" className="mt-1 text-sm text-key" role="alert">
+              <span className="sr-only">Error: </span>
+              {errors.subject.message}
+            </p>
           )}
         </div>
 
@@ -156,10 +185,17 @@ export function ContactForm({ formType, title, description }: ContactFormProps) 
             id="message"
             rows={6}
             {...register("message")}
+            required
+            aria-required="true"
+            aria-invalid={errors.message ? "true" : "false"}
+            aria-describedby={errors.message ? "message-error" : undefined}
             className="mt-1 block w-full rounded-md border border-key/30 px-3 py-2 text-key shadow-sm focus:border-cyan focus:outline-none focus:ring-1 focus:ring-cyan"
           />
           {errors.message && (
-            <p className="mt-1 text-sm text-magenta">{errors.message.message}</p>
+            <p id="message-error" className="mt-1 text-sm text-key" role="alert">
+              <span className="sr-only">Error: </span>
+              {errors.message.message}
+            </p>
           )}
         </div>
 
@@ -172,12 +208,12 @@ export function ContactForm({ formType, title, description }: ContactFormProps) 
 
         {/* Status Messages */}
         {submitStatus === "success" && (
-          <div className="rounded-md bg-cyan/10 p-4 text-sm text-cyan">
+          <div className="rounded-md bg-cyan/10 p-4 text-sm text-key" role="status" aria-live="polite">
             Thank you for your message! We'll get back to you soon.
           </div>
         )}
         {submitStatus === "error" && (
-          <div className="rounded-md bg-magenta/10 p-4 text-sm text-magenta">
+          <div className="rounded-md bg-magenta/10 p-4 text-sm text-key" role="alert" aria-live="assertive">
             There was an error submitting your message. Please try again.
           </div>
         )}

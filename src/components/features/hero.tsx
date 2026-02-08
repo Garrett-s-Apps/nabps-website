@@ -26,8 +26,8 @@ export function Hero() {
           {/* NABPS Seal - Clean, Full Size, Centered */}
           <div className="mx-auto mb-8 flex justify-center">
             <Image
-              src="/images/nabps_seal_v9.svg"
-              alt="NABPS Seal - National Association of Ballot Printing Standards"
+              src="/images/nabps-seal.svg"
+              alt="Official seal of the National Association of Ballot Printing Standards featuring a shield with printing press iconography"
               width={160}
               height={160}
               className="h-40 w-40 sm:h-48 sm:w-48"
@@ -45,15 +45,15 @@ export function Hero() {
           {/* Trust Indicators */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-white/90">
             <div className="flex items-center gap-2">
-              <Shield className="h-5 w-5 text-cyan" />
+              <Shield className="h-5 w-5 text-cyan" aria-hidden="true" />
               <span>Industry-Led Standards</span>
             </div>
             <div className="flex items-center gap-2">
-              <Award className="h-5 w-5 text-cyan" />
+              <Award className="h-5 w-5 text-cyan" aria-hidden="true" />
               <span>Independent Certification</span>
             </div>
             <div className="flex items-center gap-2">
-              <Users className="h-5 w-5 text-cyan" />
+              <Users className="h-5 w-5 text-cyan" aria-hidden="true" />
               <span>Founded by Industry Leaders</span>
             </div>
           </div>

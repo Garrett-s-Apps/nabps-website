@@ -35,21 +35,25 @@ export default function ResourcesPage() {
             <div className="lg:w-64 flex-shrink-0">
               <div className="sticky top-4 rounded-lg border border-key/10 bg-white p-6">
                 <h2 className="font-semibold text-key">Categories</h2>
-                <div className="mt-4 space-y-2">
-                  {resourceCategories.map((category) => (
-                    <button
-                      key={category.value}
-                      onClick={() => setSelectedCategory(category.value)}
-                      className={`block w-full rounded-md px-3 py-2 text-left text-sm transition-colors ${
-                        selectedCategory === category.value
-                          ? "bg-cyan text-white"
-                          : "text-key/80 hover:bg-cyan/5"
-                      }`}
-                    >
-                      {category.label}
-                    </button>
-                  ))}
-                </div>
+                <nav aria-label="Resource categories">
+                  <ul className="mt-4 space-y-2">
+                    {resourceCategories.map((category) => (
+                      <li key={category.value}>
+                        <button
+                          onClick={() => setSelectedCategory(category.value)}
+                          aria-current={selectedCategory === category.value ? "true" : undefined}
+                          className={`block w-full rounded-md px-3 py-2 text-left text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-800 ${
+                            selectedCategory === category.value
+                              ? "bg-cyan text-white"
+                              : "text-key/80 hover:bg-cyan/5"
+                          }`}
+                        >
+                          {category.label}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
               </div>
             </div>
 
@@ -74,10 +78,10 @@ export default function ResourcesPage() {
                     >
                       <div className="flex items-start gap-4">
                         {/* File Type Icon */}
-                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-cyan/10 text-cyan">
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-cyan/10 text-navy-800">
                           {(() => {
                             const Icon = getFileTypeIcon(resource.fileType);
-                            return <Icon className="h-6 w-6" />;
+                            return <Icon className="h-6 w-6" aria-hidden="true" />;
                           })()}
                         </div>
 
@@ -110,13 +114,15 @@ export default function ResourcesPage() {
                           <a
                             href={resource.fileUrl}
                             download
-                            className="inline-flex items-center gap-2 rounded-md bg-cyan px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-cyan-600"
+                            className="inline-flex items-center gap-2 rounded-md bg-cyan px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-cyan-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-800"
+                            aria-label={`Download ${resource.title}`}
                           >
                             <svg
                               className="h-4 w-4"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
+                              aria-hidden="true"
                             >
                               <path
                                 strokeLinecap="round"
@@ -146,7 +152,7 @@ export default function ResourcesPage() {
                 <div className="mt-6">
                   <a
                     href="/contact"
-                    className="inline-flex items-center gap-2 rounded-md bg-cyan px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-cyan-600"
+                    className="inline-flex items-center gap-2 rounded-md bg-cyan px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-cyan-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-800"
                   >
                     Inquire About Membership →
                   </a>

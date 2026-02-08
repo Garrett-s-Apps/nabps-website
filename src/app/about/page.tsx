@@ -114,7 +114,7 @@ export default function AboutPage() {
                   <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border-4 border-navy/10">
                     <Image
                       src={member.image}
-                      alt={`${member.name} - ${member.title}`}
+                      alt={`Professional photo of ${member.name}, ${member.title} at ${member.company}`}
                       width={128}
                       height={128}
                       className="h-full w-full object-cover"
@@ -164,7 +164,7 @@ export default function AboutPage() {
             <div className="mt-8">
               <a
                 href="/contact"
-                className="inline-flex items-center rounded-md bg-cyan px-8 py-3 text-sm font-semibold text-white hover:bg-cyan-600 transition-colors"
+                className="inline-flex items-center rounded-md bg-cyan px-8 py-3 text-sm font-semibold text-white hover:bg-cyan-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-800"
               >
                 Contact Us
               </a>
