@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     description: "Setting the Standard for Ballot Printing Integrity",
     images: [
       {
-        url: "/images/NABPS_Transparent.png",
+        url: "/images/nabps-logo.png",
         width: 1200,
         height: 630,
         alt: "NABPS Logo",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NABPS - National Association of Ballot Printing Standards",
     description: "Setting the Standard for Ballot Printing Integrity",
-    images: ["/images/NABPS_Transparent.png"],
+    images: ["/images/nabps-logo.png"],
   },
   robots: {
     index: true,

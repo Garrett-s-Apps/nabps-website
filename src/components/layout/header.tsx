@@ -31,11 +31,12 @@ export function Header() {
               <span className="sr-only">NABPS</span>
               <div className="flex items-center gap-3">
                 <Image
-                  src="/images/nabps_seal_v9.svg"
+                  src="/images/nabps-seal.svg"
                   alt="NABPS seal logo"
                   width={56}
                   height={56}
                   className="h-14 w-14"
+                  priority
                 />
                 <span className="text-xl font-bold text-navy-800 hidden sm:block" aria-hidden="true">NABPS</span>
               </div>

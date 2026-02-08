@@ -26,7 +26,7 @@ export function Hero() {
           {/* NABPS Seal - Clean, Full Size, Centered */}
           <div className="mx-auto mb-8 flex justify-center">
             <Image
-              src="/images/nabps_seal_v9.svg"
+              src="/images/nabps-seal.svg"
               alt="Official seal of the National Association of Ballot Printing Standards featuring a shield with printing press iconography"
               width={160}
               height={160}

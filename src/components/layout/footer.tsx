@@ -24,7 +24,7 @@ export function Footer() {
           <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-3">
               <Image
-                src="/images/nabps_seal_v9.svg"
+                src="/images/nabps-seal.svg"
                 alt="NABPS seal logo"
                 width={48}
                 height={48}
@@ -38,7 +38,7 @@ export function Footer() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm text-white/70 hover:text-cyan transition-colors"
+                  className="text-sm text-white/70 hover:text-cyan transition-colors underline underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-800"
                 >
                   {item.name}
                 </Link>
