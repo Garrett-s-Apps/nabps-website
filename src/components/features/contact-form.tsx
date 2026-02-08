@@ -7,13 +7,21 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
+  name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
   email: z.string().email("Invalid email address"),
   organization: z.string().optional(),
-  phone: z.string().optional(),
-  subject: z.string().min(5, "Subject must be at least 5 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  phone: z
+    .string()
+    .optional()
+    .refine(
+      (val) => !val || /^\+?[1-9]\d{1,14}$/.test(val),
+      "Phone number must be in valid E.164 format (e.g., +12345678901)"
+    ),
+  subject: z.string().min(5, "Subject must be at least 5 characters").max(200, "Subject must be less than 200 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters"),
   formType: z.enum(["general", "membership", "media"]),
+  // Honeypot field - should always be empty
+  website: z.string().max(0, "Invalid submission").optional(),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -60,7 +68,6 @@ export function ContactForm({ formType, title, description }: ContactFormProps) 
       setSubmitStatus("success");
       reset();
     } catch (error) {
-      console.error("Form submission error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -73,6 +80,18 @@ export function ContactForm({ formType, title, description }: ContactFormProps) 
       {description && <p className="mt-2 text-key/70">{description}</p>}
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-6">
+        {/* Honeypot field - hidden from users but visible to bots */}
+        <div className="absolute -left-[9999px] opacity-0 pointer-events-none" aria-hidden="true">
+          <label htmlFor="website">Website (leave blank)</label>
+          <input
+            type="text"
+            id="website"
+            {...register("website")}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
         {/* Name */}
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-key">
@@ -126,9 +145,13 @@ export function ContactForm({ formType, title, description }: ContactFormProps) 
           <input
             type="tel"
             id="phone"
+            placeholder="+12345678901"
             {...register("phone")}
             className="mt-1 block w-full rounded-md border border-key/30 px-3 py-2 text-key shadow-sm focus:border-cyan focus:outline-none focus:ring-1 focus:ring-cyan"
           />
+          {errors.phone && (
+            <p className="mt-1 text-sm text-magenta">{errors.phone.message}</p>
+          )}
         </div>
 
         {/* Subject */}
