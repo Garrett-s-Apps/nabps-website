@@ -2,21 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { contactRateLimiter } from "@/lib/rate-limit";
 import { sanitizeFormData } from "@/lib/sanitize";
-
-const contactSchema = z.object({
-  name: z.string().min(2).max(100),
-  email: z.string().email(),
-  organization: z.string().optional(),
-  phone: z.string().optional().refine(
-    (val) => !val || /^\+?[1-9]\d{1,14}$/.test(val),
-    "Phone number must be in valid E.164 format"
-  ),
-  subject: z.string().min(5).max(200),
-  message: z.string().min(10).max(2000),
-  formType: z.enum(["general", "membership", "media"]),
-  // Honeypot field - should always be empty
-  website: z.string().max(0).optional(),
-});
+import { contactSchema } from "@/lib/validation/contact";
 
 /**
  * Get the client IP address from the request
