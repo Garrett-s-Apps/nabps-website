@@ -25,12 +25,12 @@ export function Footer() {
             <div className="flex items-center gap-3">
               <Image
                 src="/images/nabps_seal_v9.svg"
-                alt="NABPS Logo"
+                alt="NABPS seal logo"
                 width={48}
                 height={48}
                 className="h-12 w-12"
               />
-              <span className="text-lg font-bold text-white">NABPS</span>
+              <span className="text-lg font-bold text-white" aria-hidden="true">NABPS</span>
             </div>
 
             <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">

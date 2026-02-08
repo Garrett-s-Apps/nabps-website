@@ -114,7 +114,7 @@ export default function AboutPage() {
                   <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border-4 border-navy/10">
                     <Image
                       src={member.image}
-                      alt={`${member.name} - ${member.title}`}
+                      alt={`Professional photo of ${member.name}, ${member.title} at ${member.company}`}
                       width={128}
                       height={128}
                       className="h-full w-full object-cover"

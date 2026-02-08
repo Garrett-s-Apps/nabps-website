@@ -32,12 +32,12 @@ export function Header() {
               <div className="flex items-center gap-3">
                 <Image
                   src="/images/nabps_seal_v9.svg"
-                  alt="NABPS Logo"
+                  alt="NABPS seal logo"
                   width={56}
                   height={56}
                   className="h-14 w-14"
                 />
-                <span className="text-xl font-bold text-navy-800 hidden sm:block">NABPS</span>
+                <span className="text-xl font-bold text-navy-800 hidden sm:block" aria-hidden="true">NABPS</span>
               </div>
             </Link>
           </div>
@@ -51,20 +51,37 @@ export function Header() {
               aria-controls="mobile-menu"
             >
               <span className="sr-only">{mobileMenuOpen ? 'Close' : 'Open'} main menu</span>
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
+              {mobileMenuOpen ? (
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              )}
             </button>
           </div>
 
