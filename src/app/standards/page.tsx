@@ -163,10 +163,10 @@ export default function StandardsPage() {
               Learn about the certification process and how to become a certified NABPS member.
             </p>
             <div className="mt-8 flex justify-center gap-4">
-              <Button asChild size="lg" className="bg-gradient-to-r from-cyan to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white border-0">
+              <Button asChild size="lg" className="bg-gradient-to-r from-cyan to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white border-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-800">
                 <Link href="/certification">View Certification Process</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-navy-800 text-navy-800 hover:bg-navy-800 hover:text-white">
+              <Button asChild variant="outline" size="lg" className="border-navy-800 text-navy-800 hover:bg-navy-800 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-800">
                 <Link href="/resources">Download Standards (PDF)</Link>
               </Button>
             </div>

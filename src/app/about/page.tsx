@@ -164,7 +164,7 @@ export default function AboutPage() {
             <div className="mt-8">
               <a
                 href="/contact"
-                className="inline-flex items-center rounded-md bg-cyan px-8 py-3 text-sm font-semibold text-white hover:bg-cyan-600 transition-colors"
+                className="inline-flex items-center rounded-md bg-cyan px-8 py-3 text-sm font-semibold text-white hover:bg-cyan-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-800"
               >
                 Contact Us
               </a>
